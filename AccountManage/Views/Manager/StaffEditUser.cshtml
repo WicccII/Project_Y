@@ -1,0 +1,81 @@
+@model AccountManage.Models.User
+@{
+    ViewData["Title"] = "Edit";
+}
+@{
+    Layout = "_LoginLayout";
+}
+<form method="post" asp-action="StaffEdit">
+<div class="form-group">
+        <input readonly type="hidden" asp-for="Id" class="form-control" />
+    </div>
+<div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input  asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input  asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <div class="form-group">
+            <label asp-for="DateOfBirth"></label>
+            <input  type="date" asp-for="DateOfBirth" class="form-control" min="1966-01-01" max="2006-01-01"/>
+        </div>
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Gender"></label>
+        <select  asp-for="Gender" class="form-control">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address"></label>
+        <input  asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ZipCode"></label>
+        <input  asp-for="ZipCode" class="form-control" />
+        <span asp-validation-for="ZipCode" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber"></label>
+        <input  asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input readonly asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Username"></label>
+        <input readonly asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IdCardPassportNumber"></label>
+        <input  asp-for="IdCardPassportNumber" class="form-control" />
+        <span asp-validation-for="IdCardPassportNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PasswordHash"></label>
+        <input readonly type="hidden" asp-for="PasswordHash" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input readonly type="hidden" asp-for="RoleType" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input readonly type="hidden" asp-for="IsDeleted" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input readonly type="hidden" asp-for="IsEmail" class="form-control" />
+    </div>
+    <button type="submit">Save</button>
+</form>
